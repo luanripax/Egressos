@@ -34,6 +34,21 @@ public class Parse {
              }
           }
          
+         nList = doc.getElementsByTagName("DETALHAMENTO-DO-ARTIGO");
+         System.out.println("---Trabalhos publicados em periodicos---");
+         for (int i = 0; i < nList.getLength(); i++) {
+             Node No = nList.item(i);
+             // System.out.println("\nCurrent Element :" + nNode.getNodeName());
+             
+             if (No.getNodeType() == Node.ELEMENT_NODE) {
+                Element eElement = (Element) No;
+                //eElement.getElementsByTagName("DADOS-BASICOS-DO-TRABALHO");
+                System.out.println("Titulo : " 
+                   + eElement.getAttribute("TITULO-DO-PERIODICO-OU-REVISTA"));
+             }
+          }
+         
+         
       } catch (Exception e) {
          e.printStackTrace();
       }
